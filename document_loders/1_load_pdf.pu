@@ -1,0 +1,18 @@
+# STEP 1: LOAD THE PDF
+# Goal: Convert the PDF into LangChain Document objects.
+
+from langchain_community.document_loaders import PyPDFLoader
+
+loader = PyPDFLoader(
+    "document_loaders/Week_01_Solution - Hare Shankar Kumhar.pdf"
+)
+
+docs = loader.load()
+
+print("Number of pages:", len(docs))
+
+print("\nFirst page:")
+print(docs[0].page_content)
+
+print("\nMetadata:")
+print(docs[0].metadata)
